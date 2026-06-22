@@ -1,0 +1,105 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Victory! | Pokémon Mystery Dungeon: Save the Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="victory-page">
+    <div class="stars-container victory-stars" id="stars"></div>
+    <div class="moon-glow"></div>
+    <div class="shooting-stars" id="shootingStars"></div>
+    
+    <main class="container victory-container">
+        <div class="victory-content-wrapper">
+            <div class="moon-animation">
+                <div class="moon-full">🌕</div>
+                <div class="moon-rays"></div>
+            </div>
+            <header class="victory-header">
+                <h1 class="victory-title">MISSION COMPLETE</h1>
+                <h2 class="victory-subtitle">The Moon Has Been Saved!</h2>
+            </header>
+            <section class="victory-story">
+                <div class="story-box victory-story-box">
+                    <p>The moon returns to the sky. The stars shine brightly again.</p>
+                    <p><strong>Pokémon Paradise is safe!</strong></p>
+                    <p>Bulbasaur, Squirtle, and Charmander thank you for your help.</p>
+                </div>
+            </section>
+            <section class="hero-celebration">
+                <div class="rescue-team-final">
+                    <div class="hero-card">
+                        <div class="pokemon-sprite bulbasaur-sprite"></div>
+                        <span>Bulbasaur</span>
+                    </div>
+                    <div class="hero-card">
+                        <div class="pokemon-sprite squirtle-sprite"></div>
+                        <span>Squirtle</span>
+                    </div>
+                    <div class="hero-card">
+                        <div class="pokemon-sprite charmander-sprite"></div>
+                        <span>Charmander</span>
+                    </div>
+                </div>
+            </section>
+            <section class="certificate-section">
+                <div class="certificate">
+                    <div class="certificate-border">
+                        <div class="certificate-content">
+                            <div class="certificate-stars">⭐ ⭐ ⭐</div>
+                            <h3>Official Certificate</h3>
+                            <p class="certificate-text">You Are Now An</p>
+                            <h2 class="certificate-title">OFFICIAL RESCUE TEAM HERO</h2>
+                            <div class="certificate-badge">🏅</div>
+                            <p class="certificate-date">Pokémon Paradise Rescue Team</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="final-stats">
+                <h3>Your Adventure Summary</h3>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-icon">🐍</span>
+                        <span class="stat-label">Ekans</span>
+                        <span class="stat-status">✅ Defeated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🥋</span>
+                        <span class="stat-label">Medicham</span>
+                        <span class="stat-status">✅ Defeated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">👻</span>
+                        <span class="stat-label">Gengar</span>
+                        <span class="stat-status">✅ Defeated</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🌙</span>
+                        <span class="stat-label">Moon</span>
+                        <span class="stat-status">✅ Saved</span>
+                    </div>
+                </div>
+            </section>
+            <div class="play-again-section">
+                <a href="index.html" class="play-again-button">
+                    Play Again 🔄
+                </a>
+            </div>
+        </div>
+    </main>
+    <div class="confetti-container" id="confetti"></div>
+    <script src="script.js"></script>
+    <script>
+        createStars();
+        createShootingStars();
+        createConfetti();
+    </script>
+</body>
+</html>

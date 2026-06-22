@@ -1,0 +1,85 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pokémon Mystery Dungeon: Save the Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="homepage">
+    <div class="stars-container" id="stars"></div>
+    <div class="moon-missing"></div>
+    
+    <main class="container">
+        <header class="game-header">
+            <div class="title-container">
+                <h1 class="game-title">
+                    <span class="title-pokemon">Pokémon</span>
+                    <span class="title-mystery">Mystery Dungeon</span>
+                </h1>
+                <h2 class="game-subtitle">Save the Moon</h2>
+            </div>
+        </header>
+        <section class="story-intro">
+            <div class="story-box">
+                <div class="rescue-team-banner">
+                    <div class="pokemon-silhouettes">
+                        <div class="pokemon bulbasaur"></div>
+                        <div class="pokemon charmander"></div>
+                        <div class="pokemon squirtle"></div>
+                    </div>
+                    <div class="banner-text">RESCUE TEAM</div>
+                </div>
+                
+                <div class="story-content">
+                    <h3>A Disaster Has Struck!</h3>
+                    <div class="story-text">
+                        <p><strong>The moon has disappeared!</strong></p>
+                        <p>Without the moon, the balance between day and night is broken. Many Pokémon cannot sleep. Nocturnal Pokémon are confused. Plants are beginning to wilt.</p>
+                        <p>The Rescue Team discovers that <span class="villain">Gengar</span>, <span class="villain">Medicham</span>, and <span class="villain">Ekans</span> have stolen the moon!</p>
+                        <p class="call-to-action">Will you help the Rescue Team save Pokémon Paradise?</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section class="level-overview">
+            <h3>Your Mission</h3>
+            <div class="levels-preview">
+                <div class="level-card">
+                    <div class="level-icon bulbasaur-icon"></div>
+                    <span class="level-name">Level 1</span>
+                    <span class="level-enemy">vs Ekans</span>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon squirtle-icon"></div>
+                    <span class="level-name">Level 2</span>
+                    <span class="level-enemy">vs Medicham</span>
+                </div>
+                <div class="level-card">
+                    <div class="level-icon charmander-icon"></div>
+                    <span class="level-name">Level 3</span>
+                    <span class="level-enemy">vs Gengar</span>
+                </div>
+            </div>
+        </section>
+        <div class="start-section">
+            <button class="start-button" onclick="startGame()">
+                <span class="button-text">START ADVENTURE</span>
+                <span class="button-icon">▶</span>
+            </button>
+        </div>
+        <footer class="game-footer">
+            <p>Complete English challenges to save the moon!</p>
+            <p class="level-info">Level A2 - A2+ - B1</p>
+        </footer>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        createStars();
+    </script>
+</body>
+</html>

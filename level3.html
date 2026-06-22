@@ -1,0 +1,417 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 2: Squirtle vs Medicham | Save the Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="level-page level2">
+    <div class="stars-container" id="stars"></div>
+    
+    <nav class="level-nav">
+        <a href="index.html" class="nav-home">🏠 Home</a>
+        <div class="level-indicator">Level 2</div>
+        <div class="progress-display">
+            <span class="progress-label">Progress:</span>
+            <div class="progress-bar-mini">
+                <div class="progress-fill-mini" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0/5</span>
+        </div>
+    </nav>
+    <main class="container level-container">
+        <!-- Lock Screen -->
+        <section class="lock-screen" id="lockScreen">
+            <div class="lock-content">
+                <div class="lock-icon">🔒</div>
+                <h2>Level 2 is Locked</h2>
+                <p>Enter the code from Level 1 to continue:</p>
+                <input type="text" id="accessCode" class="unlock-input" placeholder="Enter code..." autocomplete="off">
+                <button class="unlock-button" onclick="checkAccessCode2()">Enter</button>
+                <div class="unlock-feedback" id="accessFeedback"></div>
+                <a href="level1.html" class="back-link">← Go back to Level 1</a>
+            </div>
+        </section>
+        <!-- Story Introduction -->
+        <section class="story-section" id="storySection" style="display: none;">
+            <div class="story-header">
+                <div class="hero-display">
+                    <div class="pokemon-sprite squirtle-sprite"></div>
+                    <span class="hero-name">Squirtle</span>
+                </div>
+                <div class="vs-display">VS</div>
+                <div class="enemy-display">
+                    <div class="pokemon-sprite medicham-sprite"></div>
+                    <span class="enemy-name">Medicham</span>
+                </div>
+            </div>
+            
+            <div class="story-box level-story">
+                <h2>The Mountain Cave</h2>
+                <div class="story-scene">
+                    <p>The Rescue Team enters the hideout. But the <strong>moon is still gone</strong>!</p>
+                    <p>Gengar has escaped! A map on the wall points to a secret cave in the mountains.</p>
+                    <p>Squirtle climbs the mountain. <span class="villain">Medicham</span> guards the cave coordinates!</p>
+                    <p class="story-mission">Complete the English challenges to defeat Medicham and get the coordinates!</p>
+                </div>
+            </div>
+            
+            <button class="continue-button" onclick="startExercises()">
+                Begin Challenges <span>→</span>
+            </button>
+        </section>
+        <!-- Exercise Container -->
+        <section class="exercise-section" id="exerciseSection" style="display: none;">
+            <div class="exercise-progress">
+                <div class="exercise-dots">
+                    <span class="dot" data-exercise="1">1</span>
+                    <span class="dot" data-exercise="2">2</span>
+                    <span class="dot" data-exercise="3">3</span>
+                    <span class="dot" data-exercise="4">4</span>
+                    <span class="dot" data-exercise="5">5</span>
+                </div>
+            </div>
+            <!-- Exercise 1: Reading Comprehension -->
+            <div class="exercise" id="exercise1">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 1</span>
+                    <span class="exercise-type">Reading Comprehension</span>
+                </div>
+                
+                <div class="reading-passage">
+                    <p>The Rescue Team enters the hideout. The moon is gone. Gengar has escaped. A map on the wall points to a secret cave. Squirtle follows the map and climbs a mountain. Medicham guards the coordinates to the cave.</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question" data-question="1">
+                        <p class="question-text">1. What does the team find in the hideout?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="a">
+                                <span class="option-text">A map</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="b">
+                                <span class="option-text">The moon</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="c">
+                                <span class="option-text">Gengar</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback1"></div>
+                    </div>
+                    <div class="question" data-question="2">
+                        <p class="question-text">2. Who guards the coordinates?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="a">
+                                <span class="option-text">Ekans</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="b">
+                                <span class="option-text">Gengar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="c">
+                                <span class="option-text">Medicham</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback2"></div>
+                    </div>
+                    <div class="question" data-question="3">
+                        <p class="question-text">3. Where does Squirtle find Medicham?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                <span class="option-text">In the hideout</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                <span class="option-text">On a mountain</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                <span class="option-text">In a forest</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback3"></div>
+                    </div>
+                </div>
+                <button class="check-button" onclick="checkExercise1_L2()">Check Answers</button>
+                <button class="next-button" id="next1" style="display: none;" onclick="showExercise(2)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 2: Mission Log (True/False) -->
+            <div class="exercise" id="exercise2" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 2</span>
+                    <span class="exercise-type">Mission Log - True or False</span>
+                </div>
+                
+                <p class="exercise-instruction">Read each statement. Is it TRUE or FALSE?</p>
+                <div class="true-false-container">
+                    <div class="tf-item">
+                        <p class="tf-statement">1. The moon is gone.</p>
+                        <div class="tf-options">
+                            <label class="tf-option">
+                                <input type="radio" name="tf1" value="true">
+                                <span class="tf-text true-text">TRUE</span>
+                            </label>
+                            <label class="tf-option">
+                                <input type="radio" name="tf1" value="false">
+                                <span class="tf-text false-text">FALSE</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tf-item">
+                        <p class="tf-statement">2. Gengar escapes from the hideout.</p>
+                        <div class="tf-options">
+                            <label class="tf-option">
+                                <input type="radio" name="tf2" value="true">
+                                <span class="tf-text true-text">TRUE</span>
+                            </label>
+                            <label class="tf-option">
+                                <input type="radio" name="tf2" value="false">
+                                <span class="tf-text false-text">FALSE</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tf-item">
+                        <p class="tf-statement">3. Squirtle follows the map.</p>
+                        <div class="tf-options">
+                            <label class="tf-option">
+                                <input type="radio" name="tf3" value="true">
+                                <span class="tf-text true-text">TRUE</span>
+                            </label>
+                            <label class="tf-option">
+                                <input type="radio" name="tf3" value="false">
+                                <span class="tf-text false-text">FALSE</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tf-item">
+                        <p class="tf-statement">4. Ekans guards the coordinates.</p>
+                        <div class="tf-options">
+                            <label class="tf-option">
+                                <input type="radio" name="tf4" value="true">
+                                <span class="tf-text true-text">TRUE</span>
+                            </label>
+                            <label class="tf-option">
+                                <input type="radio" name="tf4" value="false">
+                                <span class="tf-text false-text">FALSE</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="tf-item">
+                        <p class="tf-statement">5. Medicham guards the coordinates.</p>
+                        <div class="tf-options">
+                            <label class="tf-option">
+                                <input type="radio" name="tf5" value="true">
+                                <span class="tf-text true-text">TRUE</span>
+                            </label>
+                            <label class="tf-option">
+                                <input type="radio" name="tf5" value="false">
+                                <span class="tf-text false-text">FALSE</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex2"></div>
+                <button class="check-button" onclick="checkExercise2_L2()">Check Answers</button>
+                <button class="next-button" id="next2" style="display: none;" onclick="showExercise(3)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 3: Present Simple Fill-in -->
+            <div class="exercise" id="exercise3" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 3</span>
+                    <span class="exercise-type">Present Simple</span>
+                </div>
+                
+                <p class="exercise-instruction">Complete the sentences with the correct verb:</p>
+                <div class="fill-in-container">
+                    <div class="fill-sentence">
+                        <span>1. Squirtle </span>
+                        <select class="fill-select" id="fill1">
+                            <option value="">___</option>
+                            <option value="follow">follow</option>
+                            <option value="follows">follows</option>
+                            <option value="following">following</option>
+                        </select>
+                        <span> the map.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>2. Medicham </span>
+                        <select class="fill-select" id="fill2">
+                            <option value="">___</option>
+                            <option value="guard">guard</option>
+                            <option value="guards">guards</option>
+                            <option value="guarding">guarding</option>
+                        </select>
+                        <span> the coordinates.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>3. The students </span>
+                        <select class="fill-select" id="fill3">
+                            <option value="">___</option>
+                            <option value="help">help</option>
+                            <option value="helps">helps</option>
+                            <option value="helping">helping</option>
+                        </select>
+                        <span> Squirtle.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>4. Gengar </span>
+                        <select class="fill-select" id="fill4">
+                            <option value="">___</option>
+                            <option value="run">run</option>
+                            <option value="runs">runs</option>
+                            <option value="running">running</option>
+                        </select>
+                        <span> away.</span>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex3"></div>
+                <button class="check-button" onclick="checkExercise3_L2()">Check Answers</button>
+                <button class="next-button" id="next3" style="display: none;" onclick="showExercise(4)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 4: Battle Reading -->
+            <div class="exercise" id="exercise4" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 4</span>
+                    <span class="exercise-type">Battle Reading</span>
+                </div>
+                
+                <div class="battle-scene">
+                    <div class="battle-pokemon">
+                        <div class="pokemon-sprite squirtle-sprite battle-sprite"></div>
+                        <div class="pokemon-sprite medicham-sprite battle-sprite"></div>
+                    </div>
+                </div>
+                <div class="reading-passage battle-report">
+                    <p>Medicham uses <strong>Psychic</strong>!</p>
+                    <p>Squirtle uses <strong>Water Gun</strong>!</p>
+                    <p>The battle lasts a long time. Squirtle never gives up.</p>
+                    <p>Eventually, Medicham admits defeat!</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <p class="question-text">1. Which move belongs to Medicham?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle1" value="a">
+                                <span class="option-text">Water Gun</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle1" value="b">
+                                <span class="option-text">Psychic</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle1" value="c">
+                                <span class="option-text">Vine Whip</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p class="question-text">2. Which move belongs to Squirtle?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle2" value="a">
+                                <span class="option-text">Water Gun</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle2" value="b">
+                                <span class="option-text">Psychic</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle2" value="c">
+                                <span class="option-text">Tackle</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p class="question-text">3. Who wins?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle3" value="a">
+                                <span class="option-text">Medicham</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle3" value="b">
+                                <span class="option-text">Squirtle</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle3" value="c">
+                                <span class="option-text">Nobody</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex4"></div>
+                <button class="check-button" onclick="checkExercise4_L2()">Check Answers</button>
+                <button class="next-button" id="next4" style="display: none;" onclick="showExercise(5)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 5: Coordinate Puzzle -->
+            <div class="exercise" id="exercise5" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 5</span>
+                    <span class="exercise-type">Coordinate Puzzle</span>
+                </div>
+                
+                <div class="victory-message">
+                    <p>🎉 Medicham has been defeated!</p>
+                    <p>But the coordinates are scrambled! Unscramble them to find the cave location:</p>
+                </div>
+                <div class="scramble-puzzle">
+                    <div class="scrambled-letters">
+                        <span class="letter-tile">7</span>
+                        <span class="letter-tile">-</span>
+                        <span class="letter-tile">F</span>
+                        <span class="letter-tile">B</span>
+                        <span class="letter-tile">2</span>
+                    </div>
+                    
+                    <div class="code-input-container">
+                        <input type="text" id="codeAnswer" class="code-input" placeholder="Type the coordinates here..." maxlength="5" autocomplete="off">
+                        <p class="hint-text">Hint: The format is letter-number-dash-letter-number</p>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex5"></div>
+                <button class="check-button" onclick="checkExercise5_L2()">Check Coordinates</button>
+            </div>
+        </section>
+        <!-- Completion Section -->
+        <section class="completion-section" id="completionSection" style="display: none;">
+            <div class="completion-content">
+                <div class="trophy-animation">🏆</div>
+                <h2>Level 2 Complete!</h2>
+                <p class="completion-message">Congratulations! You defeated Medicham and obtained the cave coordinates!</p>
+                
+                <div class="score-display">
+                    <span class="score-label">Your Score:</span>
+                    <span class="score-value" id="finalScore">0</span>
+                    <span class="score-total">/ 100</span>
+                </div>
+                <div class="code-reveal">
+                    <p>The cave coordinates are:</p>
+                    <div class="revealed-code">B2-F7</div>
+                </div>
+                <div class="unlock-section">
+                    <p>Enter the coordinates to unlock Level 3:</p>
+                    <input type="text" id="unlockCode" class="unlock-input" placeholder="Enter coordinates..." autocomplete="off">
+                    <button class="unlock-button" onclick="unlockLevel3()">Unlock Level 3</button>
+                    <div class="unlock-feedback" id="unlockFeedback"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        createStars();
+        initLevel2();
+    </script>
+</body>
+</html>

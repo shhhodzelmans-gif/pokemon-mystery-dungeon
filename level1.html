@@ -1,0 +1,376 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 1: Bulbasaur vs Ekans | Save the Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="level-page level1">
+    <div class="stars-container" id="stars"></div>
+    
+    <nav class="level-nav">
+        <a href="index.html" class="nav-home">🏠 Home</a>
+        <div class="level-indicator">Level 1</div>
+        <div class="progress-display">
+            <span class="progress-label">Progress:</span>
+            <div class="progress-bar-mini">
+                <div class="progress-fill-mini" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0/5</span>
+        </div>
+    </nav>
+    <main class="container level-container">
+        <!-- Story Introduction -->
+        <section class="story-section" id="storySection">
+            <div class="story-header">
+                <div class="hero-display">
+                    <div class="pokemon-sprite bulbasaur-sprite"></div>
+                    <span class="hero-name">Bulbasaur</span>
+                </div>
+                <div class="vs-display">VS</div>
+                <div class="enemy-display">
+                    <div class="pokemon-sprite ekans-sprite"></div>
+                    <span class="enemy-name">Ekans</span>
+                </div>
+            </div>
+            
+            <div class="story-box level-story">
+                <h2>The Locked Hideout</h2>
+                <div class="story-scene">
+                    <p>Bulbasaur stands in front of an old hideout. The entrance is locked with a secret code.</p>
+                    <p>The <strong>moon is missing</strong> from the sky. Everything feels wrong.</p>
+                    <p><span class="villain">Ekans</span> knows the secret code to enter. But Ekans will not share it easily!</p>
+                    <p class="story-mission">Complete the English challenges to defeat Ekans and get the code!</p>
+                </div>
+            </div>
+            
+            <button class="continue-button" onclick="startExercises()">
+                Begin Challenges <span>→</span>
+            </button>
+        </section>
+        <!-- Exercise Container -->
+        <section class="exercise-section" id="exerciseSection" style="display: none;">
+            <div class="exercise-progress">
+                <div class="exercise-dots">
+                    <span class="dot" data-exercise="1">1</span>
+                    <span class="dot" data-exercise="2">2</span>
+                    <span class="dot" data-exercise="3">3</span>
+                    <span class="dot" data-exercise="4">4</span>
+                    <span class="dot" data-exercise="5">5</span>
+                </div>
+            </div>
+            <!-- Exercise 1: Reading Comprehension -->
+            <div class="exercise" id="exercise1">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 1</span>
+                    <span class="exercise-type">Reading Comprehension</span>
+                </div>
+                
+                <div class="reading-passage">
+                    <p>Bulbasaur stands in front of an old hideout. The moon is missing from the sky. The entrance to the hideout is locked. Ekans knows the secret code. Bulbasaur needs the students' help to defeat Ekans and get the code.</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question" data-question="1">
+                        <p class="question-text">1. Why does Bulbasaur need the code?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="a">
+                                <span class="option-text">To find Ekans</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="b">
+                                <span class="option-text">To enter the hideout</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="c">
+                                <span class="option-text">To call for help</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback1"></div>
+                    </div>
+                    <div class="question" data-question="2">
+                        <p class="question-text">2. Who knows the code?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="a">
+                                <span class="option-text">Bulbasaur</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="b">
+                                <span class="option-text">The students</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="c">
+                                <span class="option-text">Ekans</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback2"></div>
+                    </div>
+                    <div class="question" data-question="3">
+                        <p class="question-text">3. What is missing?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                <span class="option-text">The sun</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                <span class="option-text">The moon</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                <span class="option-text">The stars</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback3"></div>
+                    </div>
+                </div>
+                <button class="check-button" onclick="checkExercise1()">Check Answers</button>
+                <button class="next-button" id="next1" style="display: none;" onclick="showExercise(2)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 2: Find the Clues -->
+            <div class="exercise" id="exercise2" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 2</span>
+                    <span class="exercise-type">Find the Clues</span>
+                </div>
+                
+                <p class="exercise-instruction">Bulbasaur is looking for clues near the hideout. Select all the REAL clues (not the fake ones):</p>
+                <div class="clues-grid">
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="footprints">
+                        <div class="clue-card">
+                            <div class="clue-icon">👣</div>
+                            <span>Footprints</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="paper">
+                        <div class="clue-card">
+                            <div class="clue-icon">📄</div>
+                            <span>A piece of paper</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="bicycle">
+                        <div class="clue-card">
+                            <div class="clue-icon">🚲</div>
+                            <span>A bicycle</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="sign">
+                        <div class="clue-card">
+                            <div class="clue-icon">🪧</div>
+                            <span>A broken sign</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="pokeball">
+                        <div class="clue-card">
+                            <div class="clue-icon">🔴</div>
+                            <span>A Poké Ball</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="feedback" id="feedback-ex2"></div>
+                <button class="check-button" onclick="checkExercise2()">Check Answers</button>
+                <button class="next-button" id="next2" style="display: none;" onclick="showExercise(3)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 3: Present Simple Fill-in -->
+            <div class="exercise" id="exercise3" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 3</span>
+                    <span class="exercise-type">Present Simple</span>
+                </div>
+                
+                <p class="exercise-instruction">Complete the sentences with the correct verb:</p>
+                <div class="fill-in-container">
+                    <div class="fill-sentence">
+                        <span>1. Bulbasaur </span>
+                        <select class="fill-select" id="fill1">
+                            <option value="">___</option>
+                            <option value="look">look</option>
+                            <option value="looks">looks</option>
+                            <option value="looking">looking</option>
+                        </select>
+                        <span> for Ekans.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>2. Ekans </span>
+                        <select class="fill-select" id="fill2">
+                            <option value="">___</option>
+                            <option value="have">have</option>
+                            <option value="has">has</option>
+                            <option value="having">having</option>
+                        </select>
+                        <span> the code.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>3. The students </span>
+                        <select class="fill-select" id="fill3">
+                            <option value="">___</option>
+                            <option value="help">help</option>
+                            <option value="helps">helps</option>
+                            <option value="helping">helping</option>
+                        </select>
+                        <span> Bulbasaur.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>4. The moon </span>
+                        <select class="fill-select" id="fill4">
+                            <option value="">___</option>
+                            <option value="am">am</option>
+                            <option value="is">is</option>
+                            <option value="are">are</option>
+                        </select>
+                        <span> missing.</span>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex3"></div>
+                <button class="check-button" onclick="checkExercise3()">Check Answers</button>
+                <button class="next-button" id="next3" style="display: none;" onclick="showExercise(4)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 4: Battle Report -->
+            <div class="exercise" id="exercise4" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 4</span>
+                    <span class="exercise-type">Battle Report</span>
+                </div>
+                
+                <div class="battle-scene">
+                    <div class="battle-pokemon">
+                        <div class="pokemon-sprite bulbasaur-sprite battle-sprite"></div>
+                        <div class="pokemon-sprite ekans-sprite battle-sprite"></div>
+                    </div>
+                </div>
+                <div class="reading-passage battle-report">
+                    <p>Ekans uses <strong>Poison Sting</strong>!</p>
+                    <p>Bulbasaur uses <strong>Vine Whip</strong>!</p>
+                    <p>The battle is difficult. Bulbasaur fights bravely.</p>
+                    <p>Finally, Bulbasaur wins!</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question">
+                        <p class="question-text">1. Which move does Ekans use?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle1" value="a">
+                                <span class="option-text">Vine Whip</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle1" value="b">
+                                <span class="option-text">Poison Sting</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle1" value="c">
+                                <span class="option-text">Water Gun</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p class="question-text">2. Which move does Bulbasaur use?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle2" value="a">
+                                <span class="option-text">Vine Whip</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle2" value="b">
+                                <span class="option-text">Poison Sting</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle2" value="c">
+                                <span class="option-text">Tackle</span>
+                            </label>
+                        </div>
+                    </div>
+                    <div class="question">
+                        <p class="question-text">3. Who wins?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="battle3" value="a">
+                                <span class="option-text">Ekans</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle3" value="b">
+                                <span class="option-text">Bulbasaur</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="battle3" value="c">
+                                <span class="option-text">Nobody</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex4"></div>
+                <button class="check-button" onclick="checkExercise4()">Check Answers</button>
+                <button class="next-button" id="next4" style="display: none;" onclick="showExercise(5)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 5: Secret Code Puzzle -->
+            <div class="exercise" id="exercise5" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 5</span>
+                    <span class="exercise-type">Secret Code Puzzle</span>
+                </div>
+                
+                <div class="victory-message">
+                    <p>🎉 Ekans has been defeated!</p>
+                    <p>But the code is scrambled! Unscramble the letters to find the secret code:</p>
+                </div>
+                <div class="scramble-puzzle">
+                    <div class="scrambled-letters">
+                        <span class="letter-tile">A</span>
+                        <span class="letter-tile">C</span>
+                        <span class="letter-tile">H</span>
+                        <span class="letter-tile">U</span>
+                        <span class="letter-tile">P</span>
+                        <span class="letter-tile">I</span>
+                        <span class="letter-tile">K</span>
+                    </div>
+                    
+                    <div class="code-input-container">
+                        <input type="text" id="codeAnswer" class="code-input" placeholder="Type the code here..." maxlength="7" autocomplete="off">
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex5"></div>
+                <button class="check-button" onclick="checkExercise5()">Check Code</button>
+            </div>
+        </section>
+        <!-- Completion Section -->
+        <section class="completion-section" id="completionSection" style="display: none;">
+            <div class="completion-content">
+                <div class="trophy-animation">🏆</div>
+                <h2>Level 1 Complete!</h2>
+                <p class="completion-message">Congratulations! You defeated Ekans and obtained the secret code!</p>
+                
+                <div class="score-display">
+                    <span class="score-label">Your Score:</span>
+                    <span class="score-value" id="finalScore">0</span>
+                    <span class="score-total">/ 100</span>
+                </div>
+                <div class="code-reveal">
+                    <p>The secret code is:</p>
+                    <div class="revealed-code">PIKACHU</div>
+                </div>
+                <div class="unlock-section">
+                    <p>Enter the code to unlock Level 2:</p>
+                    <input type="text" id="unlockCode" class="unlock-input" placeholder="Enter code..." autocomplete="off">
+                    <button class="unlock-button" onclick="unlockLevel2()">Unlock Level 2</button>
+                    <div class="unlock-feedback" id="unlockFeedback"></div>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        createStars();
+        initLevel1();
+    </script>
+</body>
+</html>
