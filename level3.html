@@ -1,0 +1,318 @@
+html
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Level 3: Charmander vs Gengar | Save the Moon</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="[fonts.googleapis.com](https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Quicksand:wght@400;600;700&display=swap)" rel="stylesheet">
+</head>
+<body class="level-page level3">
+    <div class="stars-container" id="stars"></div>
+    
+    <nav class="level-nav">
+        <a href="index.html" class="nav-home">🏠 Home</a>
+        <div class="level-indicator">Level 3 - Final Battle</div>
+        <div class="progress-display">
+            <span class="progress-label">Progress:</span>
+            <div class="progress-bar-mini">
+                <div class="progress-fill-mini" id="progressBar"></div>
+            </div>
+            <span class="progress-text" id="progressText">0/4</span>
+        </div>
+    </nav>
+    <main class="container level-container">
+        <!-- Lock Screen -->
+        <section class="lock-screen" id="lockScreen">
+            <div class="lock-content">
+                <div class="lock-icon">🔒</div>
+                <h2>Level 3 is Locked</h2>
+                <p>Enter the coordinates from Level 2 to continue:</p>
+                <input type="text" id="accessCode" class="unlock-input" placeholder="Enter coordinates..." autocomplete="off">
+                <button class="unlock-button" onclick="checkAccessCode3()">Enter</button>
+                <div class="unlock-feedback" id="accessFeedback"></div>
+                <a href="level2.html" class="back-link">← Go back to Level 2</a>
+            </div>
+        </section>
+        <!-- Story Introduction -->
+        <section class="story-section" id="storySection" style="display: none;">
+            <div class="story-header final-battle-header">
+                <div class="hero-display">
+                    <div class="pokemon-sprite charmander-sprite"></div>
+                    <span class="hero-name">Charmander</span>
+                </div>
+                <div class="vs-display final-vs">VS</div>
+                <div class="enemy-display">
+                    <div class="pokemon-sprite gengar-sprite"></div>
+                    <span class="enemy-name">Gengar</span>
+                </div>
+            </div>
+            
+            <div class="story-box level-story final-story">
+                <h2>The Final Battle</h2>
+                <div class="story-scene">
+                    <p>The Rescue Team arrives at the secret cave. Inside, they find it!</p>
+                    <p><strong>The moon floats above a giant crystal.</strong></p>
+                    <p><span class="villain">Gengar</span> stands in front of it, guarding it fiercely!</p>
+                    <p>Charmander steps forward to challenge Gengar in the <strong>final battle</strong>!</p>
+                    <p class="story-mission">Complete the final challenges to defeat Gengar and save the moon!</p>
+                </div>
+            </div>
+            
+            <button class="continue-button final-button" onclick="startExercises()">
+                Begin Final Battle <span>⚔️</span>
+            </button>
+        </section>
+        <!-- Exercise Container -->
+        <section class="exercise-section" id="exerciseSection" style="display: none;">
+            <div class="exercise-progress">
+                <div class="exercise-dots">
+                    <span class="dot" data-exercise="1">1</span>
+                    <span class="dot" data-exercise="2">2</span>
+                    <span class="dot" data-exercise="3">3</span>
+                    <span class="dot" data-exercise="4">4</span>
+                </div>
+            </div>
+            <!-- Exercise 1: Reading Comprehension -->
+            <div class="exercise" id="exercise1">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 1</span>
+                    <span class="exercise-type">Reading Comprehension</span>
+                </div>
+                
+                <div class="reading-passage">
+                    <p>The Rescue Team arrives at the cave. Inside, they find the moon! The moon floats above a giant crystal. Gengar stands in front of the crystal and guards the moon. Charmander challenges Gengar to battle.</p>
+                </div>
+                <div class="questions-container">
+                    <div class="question" data-question="1">
+                        <p class="question-text">1. Where is the moon?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q1" value="a">
+                                <span class="option-text">On the mountain</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="b">
+                                <span class="option-text">In the cave</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q1" value="c">
+                                <span class="option-text">In the hideout</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback1"></div>
+                    </div>
+                    <div class="question" data-question="2">
+                        <p class="question-text">2. What floats above the crystal?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q2" value="a">
+                                <span class="option-text">Gengar</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="b">
+                                <span class="option-text">The moon</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q2" value="c">
+                                <span class="option-text">Charmander</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback2"></div>
+                    </div>
+                    <div class="question" data-question="3">
+                        <p class="question-text">3. Who stands in front of the crystal?</p>
+                        <div class="options">
+                            <label class="option">
+                                <input type="radio" name="q3" value="a">
+                                <span class="option-text">Medicham</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="b">
+                                <span class="option-text">Ekans</span>
+                            </label>
+                            <label class="option">
+                                <input type="radio" name="q3" value="c">
+                                <span class="option-text">Gengar</span>
+                            </label>
+                        </div>
+                        <div class="feedback" id="feedback3"></div>
+                    </div>
+                </div>
+                <button class="check-button" onclick="checkExercise1_L3()">Check Answers</button>
+                <button class="next-button" id="next1" style="display: none;" onclick="showExercise(2)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 2: Cave Investigation -->
+            <div class="exercise" id="exercise2" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 2</span>
+                    <span class="exercise-type">Cave Investigation</span>
+                </div>
+                
+                <p class="exercise-instruction">What does the Rescue Team find in the cave? Select ONLY the correct items:</p>
+                <div class="clues-grid">
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="moon">
+                        <div class="clue-card">
+                            <div class="clue-icon">🌙</div>
+                            <span>The moon</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="crystal">
+                        <div class="clue-card">
+                            <div class="clue-icon">💎</div>
+                            <span>A crystal</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="medicham">
+                        <div class="clue-card">
+                            <div class="clue-icon">🥋</div>
+                            <span>Medicham</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="gengar">
+                        <div class="clue-card">
+                            <div class="clue-icon">👻</div>
+                            <span>Gengar</span>
+                        </div>
+                    </label>
+                    <label class="clue-item">
+                        <input type="checkbox" name="clue" value="ekans">
+                        <div class="clue-card">
+                            <div class="clue-icon">🐍</div>
+                            <span>Ekans</span>
+                        </div>
+                    </label>
+                </div>
+                <div class="feedback" id="feedback-ex2"></div>
+                <button class="check-button" onclick="checkExercise2_L3()">Check Answers</button>
+                <button class="next-button" id="next2" style="display: none;" onclick="showExercise(3)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 3: Present Simple Fill-in -->
+            <div class="exercise" id="exercise3" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 3</span>
+                    <span class="exercise-type">Present Simple</span>
+                </div>
+                
+                <p class="exercise-instruction">Complete the sentences with the correct verb:</p>
+                <div class="fill-in-container">
+                    <div class="fill-sentence">
+                        <span>1. Gengar </span>
+                        <select class="fill-select" id="fill1">
+                            <option value="">___</option>
+                            <option value="guard">guard</option>
+                            <option value="guards">guards</option>
+                            <option value="guarding">guarding</option>
+                        </select>
+                        <span> the moon.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>2. Charmander </span>
+                        <select class="fill-select" id="fill2">
+                            <option value="">___</option>
+                            <option value="step">step</option>
+                            <option value="steps">steps</option>
+                            <option value="stepping">stepping</option>
+                        </select>
+                        <span> forward.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>3. The students </span>
+                        <select class="fill-select" id="fill3">
+                            <option value="">___</option>
+                            <option value="help">help</option>
+                            <option value="helps">helps</option>
+                            <option value="helping">helping</option>
+                        </select>
+                        <span> Charmander.</span>
+                    </div>
+                    <div class="fill-sentence">
+                        <span>4. The Rescue Team </span>
+                        <select class="fill-select" id="fill4">
+                            <option value="">___</option>
+                            <option value="enter">enter</option>
+                            <option value="enters">enters</option>
+                            <option value="entering">entering</option>
+                        </select>
+                        <span> the cave.</span>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex3"></div>
+                <button class="check-button" onclick="checkExercise3_L3()">Check Answers</button>
+                <button class="next-button" id="next3" style="display: none;" onclick="showExercise(4)">Next Exercise →</button>
+            </div>
+            <!-- Exercise 4: Final Battle - Ordering -->
+            <div class="exercise" id="exercise4" style="display: none;">
+                <div class="exercise-header">
+                    <span class="exercise-number">Exercise 4</span>
+                    <span class="exercise-type">Final Battle - Put in Order</span>
+                </div>
+                
+                <div class="battle-scene final-battle-scene">
+                    <div class="battle-pokemon">
+                        <div class="pokemon-sprite charmander-sprite battle-sprite"></div>
+                        <div class="pokemon-sprite gengar-sprite battle-sprite"></div>
+                    </div>
+                </div>
+                <p class="exercise-instruction">Drag and drop to put the battle events in the correct order:</p>
+                <div class="ordering-container" id="orderingContainer">
+                    <div class="order-item" draggable="true" data-order="4">
+                        <span class="order-number">?</span>
+                        <span class="order-text">The crystal breaks</span>
+                    </div>
+                    <div class="order-item" draggable="true" data-order="2">
+                        <span class="order-number">?</span>
+                        <span class="order-text">Gengar attacks</span>
+                    </div>
+                    <div class="order-item" draggable="true" data-order="5">
+                        <span class="order-number">?</span>
+                        <span class="order-text">The moon returns</span>
+                    </div>
+                    <div class="order-item" draggable="true" data-order="1">
+                        <span class="order-number">?</span>
+                        <span class="order-text">Charmander attacks</span>
+                    </div>
+                    <div class="order-item" draggable="true" data-order="3">
+                        <span class="order-number">?</span>
+                        <span class="order-text">Gengar falls</span>
+                    </div>
+                </div>
+                <div class="feedback" id="feedback-ex4"></div>
+                <button class="check-button" onclick="checkExercise4_L3()">Check Order</button>
+            </div>
+        </section>
+        <!-- Completion Section -->
+        <section class="completion-section" id="completionSection" style="display: none;">
+            <div class="completion-content victory-content">
+                <div class="moon-restored">🌙</div>
+                <h2>GENGAR DEFEATED!</h2>
+                <p class="completion-message">The crystal breaks! The moon floats back into the sky!</p>
+                
+                <div class="score-display">
+                    <span class="score-label">Your Score:</span>
+                    <span class="score-value" id="finalScore">0</span>
+                    <span class="score-total">/ 100</span>
+                </div>
+                <div class="victory-celebration">
+                    <p>Pokémon Paradise is saved!</p>
+                    <button class="victory-button" onclick="goToVictory()">
+                        Continue to Victory Celebration! 🎉
+                    </button>
+                </div>
+            </div>
+        </section>
+    </main>
+    <script src="script.js"></script>
+    <script>
+        createStars();
+        initLevel3();
+    </script>
+</body>
+</html>
